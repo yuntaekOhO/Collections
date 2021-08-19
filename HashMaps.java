@@ -9,7 +9,7 @@ public class HashMaps {
 	 * keySet()		get(key)		containsKey(key)
 	 * containsValue(value)	remove(key)	clear()
 	 * putAll(HashMap)		values()	clone()
-	 * entrySet()
+	 * entrySet()	getOrDefault()
 	 * */
 	public static void main(String[] args) {
 		HashMap<String, Integer> hm = new HashMap<String, Integer>();
@@ -66,6 +66,11 @@ public class HashMaps {
 		System.out.print("Set entrySet() : ");
 		System.out.println(set);
 		//HashMap에 저장된 key,value 엔트리 형태로 set에 저장
+		
+		System.out.println("getOrDefault() - 찾는 키 있음 : "+hm3.getOrDefault("이", 0) +
+				", 찾는 키 없음 : "+hm3.getOrDefault("오", 0));
+		// 찾는 key가 존재한다면 찾는 key의 value 리턴, 없다면 default 리턴
+		// getOrDefault(search key, default value)
 	}
 
 }
