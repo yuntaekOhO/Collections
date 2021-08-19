@@ -3,7 +3,14 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public class HashMaps {
-
+	/* 
+	 * 			  < HashMap >
+	 * isEmpty()	toString()	size()
+	 * keySet()		get(key)		containsKey(key)
+	 * containsValue(value)	remove(key)	clear()
+	 * putAll(HashMap)		values()	clone()
+	 * entrySet()
+	 * */
 	public static void main(String[] args) {
 		HashMap<String, Integer> hm = new HashMap<String, Integer>();
 		
