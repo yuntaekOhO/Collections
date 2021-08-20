@@ -1,15 +1,19 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class HashMaps {
 	/* 
-	 * 			  < HashMap >
+	 * 			  	< HashMap >
 	 * isEmpty()	toString()	size()
 	 * keySet()		get(key)		containsKey(key)
 	 * containsValue(value)	remove(key)	clear()
 	 * putAll(HashMap)		values()	clone()
-	 * entrySet()	getOrDefault()
+	 * entrySet()	getOrDefault()		putIfAbsent(key, value)
+	 * compute(key, (type) -> Function)		computeIfAbsent(key, Function)
+	 * computeIfPresent(key, (type) -> function)	TreeMap
 	 * */
 	public static void main(String[] args) {
 		HashMap<String, Integer> hm = new HashMap<String, Integer>();
@@ -42,7 +46,7 @@ public class HashMaps {
 		
 		hm.clear();
 		System.out.println("clear() : "+hm);
-		// HashMap 모든 요소 삭제
+		// HashMap 모든 객체 요소 삭제
 		
 		HashMap<String, Integer> hm2 = new HashMap<String, Integer>();
 		hm2.put("김", 1);
@@ -71,6 +75,33 @@ public class HashMaps {
 				", 찾는 키 없음 : "+hm3.getOrDefault("오", 0));
 		// 찾는 key가 존재한다면 찾는 key의 value 리턴, 없다면 default 리턴
 		// getOrDefault(search key, default value)
+		
+		System.out.print(hm3.putIfAbsent("윤", 6));
+		System.out.println(hm3.putIfAbsent("송", 6));
+		System.out.println("putIfAbsent(key, value) : "+hm3);
+		//key값 있으면 해당 key의 value 리턴 ,
+		//key값 없으면 key와 value 추가
+		
+		hm3.put("A", 7);
+		System.out.println(hm3.compute("A", (s, integer) -> integer+1));
+		System.out.println("compute(key, Function)"+hm3);
+		//key의 값에 대해서 어떻게 연살할지 정의한다. 기존의 키에 대한 값이 없는 경우 V는 null로 생성된다.
+		
+		hm3.computeIfAbsent("A", key -> 10); //key가 A인것은 있음  
+		hm3.computeIfAbsent("B", key -> 10); //key가 B인것은 없음 = key "B" 만들고 value 10 
+		System.out.println(hm3.get("A"));	// =value 8
+		System.out.println(hm3.get("B"));	// =value 10
+		System.out.println("computeIfAbsent(key, Function) 실행 후 : "+hm3);
+		//compute와 비슷하다. key 값이 없을 경우에 실행된다.
+		
+		System.out.println(hm3.computeIfPresent("B", (s, number) -> number*number));
+		System.out.println(hm3.computeIfPresent("C", (s, number) -> 20));
+		System.out.println("computeIfPresent(key, function) : "+hm3);
+		//key "B"가 있으면 Function 실행
+		
+		TreeMap sortedMap = new TreeMap(hm3);
+		System.out.println("TreeMap을 이용한 key 정렬 : "+sortedMap);
+		//key의 순서대로 정렬
 	}
 
 }
