@@ -3,10 +3,12 @@ public class Strings {
 	/* 
 	 * boolean startsWith()		boolean endsWith()		boolean equals()
 	 * int indexOf()			int lastindexOf()		int length()
-	 * String replace()			String replaceAll()		String trim()
-	 * String split()			String substring()		StringLowerCase()
-	 * String toUpperCase()		String toString()		String valueOf()
-	 * int compareTo()			
+	 * String replace()			String replaceAll()		String replaceFisrt()
+	 * String trim()			String split()			String substring()
+	 * StringLowerCase()		String toUpperCase()	String toString()
+	 * String valueOf()			int compareTo()			boolean contains()
+	 * char charAt()			String concat()			String format()
+	 * boolean matches()
 	 * */
 	public static void main(String[] args) {
 		String str = "안녕하세요";
@@ -93,12 +95,36 @@ public class Strings {
 		System.out.println("a.compareTo(b) : 두개의 문자열을 사전순으로 비교");
 		System.out.println("두 문자열이 같으면 0 반환, 현재 문자열이 먼저 나오면 음수 반환, 현재 문자열이 나중에 나오면 양수 반환");
 		if(compareTo > 0) {
-			System.out.println(a+" > "+b);
+			System.out.println(a+" > "+b+"\n");
 		} else if(compareTo == 0) {
-			System.out.println(a+" = "+b);
+			System.out.println(a+" = "+b+"\n");
 		} else {
-			System.out.println(a+" < "+b);
+			System.out.println(a+" < "+b+"\n");
 		}
+		
+		boolean contains = str5.contains(b);
+		System.out.println("str5.contains(b) 두개의 문자열을 비교. 현재 문자열이 대상 문자열을 포함 하고 있으면 true, 없으면 false");
+		System.out.println(str5+", "+b+" : "+contains+"\n");
+		
+		String str9 = "charAt";
+		char charAt = str9.charAt(2);
+		System.out.println("str9 : "+str9);
+		System.out.println("charAt(2) 문자열의 지정된 번호에 저장된 문자(character) 반환 : "+ charAt+"\n");
+		
+		String q = "Oh";
+		String w = "Yuntaek";
+		String concat = q.concat(w);
+		System.out.println("q : "+q+",  w : "+w);
+		System.out.println("concat() : "+concat+"\n");
+		
+		int e = 123456879;
+		String r = String.format("%,d", e);
+		System.out.println("e : "+ e+",  str8 : "+str8);
+		System.out.println("r = String.format('%,d',e) 서식문자열 이용, 반환 : "+r+"\n");
+		
+		boolean matches = r.matches(str8);
+		System.out.println("r.matches(str8) : 지정한 정규 표환과 일치하면 true, 불일치하면 false");
+		System.out.println(" : "+ matches);
 	}
 
 }
