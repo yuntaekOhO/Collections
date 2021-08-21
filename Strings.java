@@ -45,6 +45,8 @@ public class Strings {
 		System.out.println("str5 : "+str5);
 		String replaceAll = str5.replaceAll(" ", "*");
 		System.out.println("str5.replaceAll(정규식 or 기존문자, 대체문자) 공백을 *로 변환 : "+replaceAll);
+		replaceAll = replaceAll.replaceAll("[*]", "-");
+		System.out.println("replaceAll(\"[*]\", \"-\") : "+replaceAll);
 		/* < 정규식 > 
 		 * 	"[0-9]" : 모든 숫자
 		 *  "." : 모든 문자
