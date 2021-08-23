@@ -1,5 +1,8 @@
 public class StringBuilders {
-	/* 
+	/* String 클래스는 불변인데 반해 StringBuilder는 가변적 특징
+	 * String.concat() 등으로 문자열 추가, 수정 등을 하면 새로운 객체가 만들어져 메모리가 계속 사용되는데 비해
+	 * StringBuilder는 새로운 문자열을 만들어 내지않고 기존의 문자열에 추가될 뿐이다.
+	 * 
 	 * 				 [String 클래스와 동일한 메소드] 		{
 	 * charAt() : 특정 인덱스 위치의 문자 반환
 	 * indexOf(String str) : 지정한 str 검색해서 해당 문자 위치 반환
