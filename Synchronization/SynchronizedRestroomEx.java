@@ -16,7 +16,7 @@ public class SynchronizedRestroomEx {
 
 class SynchronizedRestroom {
 	//동기화된 메서드
-	public void use() {
+	public synchronized void use() {
 		System.out.format("%s : 화장실에 들어갔다\n", Thread.currentThread().getName());
 		try {
 			Thread.sleep(1000);
