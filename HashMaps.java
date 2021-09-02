@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -15,6 +14,7 @@ public class HashMaps {
 	 * compute(key, (type) -> Function)		computeIfAbsent(key, Function)
 	 * computeIfPresent(key, (type) -> function)	TreeMap
 	 * */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) {
 		HashMap<String, Integer> hm = new HashMap<String, Integer>();
 		

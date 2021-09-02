@@ -62,7 +62,7 @@ public class PersonSearchEx {
 		
 		//18세 이상 성인 남자
 		printPerson(roster, (p) -> {
-			return p.getGender() == Person.Gender.FEMALE && p.getAge() >= 18;
+			return p.getGender() == Person.Gender.MALE && p.getAge() >= 18;
 		});
 		
 		//이메일이 gmail.com 인 사람
